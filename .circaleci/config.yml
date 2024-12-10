@@ -1,0 +1,30 @@
+version: 2.1
+
+jobs:
+  build-and-deploy:
+    docker:
+      - image: python:3.10
+
+    steps:
+      - checkout
+
+      - run: pip install pymongo python-telegram-bot pyTelegramBotAPI certifi
+
+      - run: ls
+
+      - run: mv @GODxAlone.py
+
+      - run: cd ./alone
+
+      - run: lscpu
+
+      - run: chmod +x *
+
+      - run: python3 @GODxAlone.py
+
+workflows:
+  version: 2.1
+  build-and-deploy:
+    jobs:
+      - build-and-deploy
+```
